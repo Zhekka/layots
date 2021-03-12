@@ -1,0 +1,234 @@
+$font-families: ("main":$font-family-main,
+        "Paragraph":$font-family-paragraph,
+        "Head":$heading-font-family
+);
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $section-back;
+  font-family: map-get($font-families, "main");
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+
+@mixin button($background) {
+  background: $background;
+  color: white;
+  font-size: 16px;
+  border-radius: 3px;
+  width: 120px;
+  height: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+@mixin link() {
+  font-family: map-get($font-families, "Head");
+  color: white;
+
+}
+
+@mixin gradient($rgb,$linear-gradient) {
+  background: $rgb;
+  background: $linear-gradient;
+
+}
+
+%selection {
+  &::selection {
+    background: $selection-color;
+  }
+
+}
+
+.landing-logo {
+  display: flex;
+  align-items: center;
+  color: $main-text-color;
+  text-align: center;
+  font-weight: 800;
+
+  img {
+    margin: 15px;
+  }
+
+  span {
+    display: block;
+    font-size: 10px;
+    font-weight: normal;
+  }
+
+}
+
+.header {
+  background: $header-back-img;
+  border-radius: 0 0 600px 0;
+}
+
+.header-wrap {
+  margin-left: 190px;
+  padding-top: 10px;
+
+}
+
+.header_heading {
+  font-family: map-get($font-families, "Head");
+  margin-top: 70px;
+  font-size: 70px;
+  max-width: 500px;
+  color: $main-text-color;
+  @extend %selection;
+  font-weight: 800;
+
+}
+
+.header_text {
+  max-width: 600px;
+  margin: 50px 0;
+  color: $main-text-color;
+
+}
+
+.header_button {
+  @include button($button-back);
+  margin-bottom: 150px;
+
+}
+
+.login {
+  @include link();
+  margin-left: 150px;
+  font-size: 20px;
+
+}
+
+.section {
+  background: $section-back;
+  text-align: center;
+  font-family: map-get($font-families, "Head");
+}
+
+.section_text {
+  @extend %selection;
+  padding: 50px 0;
+  text-align: center;
+  font-size: 50px;
+  color: $main-text-color;
+}
+
+.section_card {
+  display: flex;
+  max-width: 1100px;
+  margin: 20px auto;
+  background: $section-card-back;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.section_card_img {
+  width: 400px;
+  border-radius: 5px;
+  margin: 20px;
+
+}
+
+.section_card_right_container {
+  width: 450px;
+  margin-left: 80px;
+}
+
+.section_card_heading {
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+}
+
+.section_card_text {
+  font-family: map-get($font-families, "Paragraph");
+  text-align: justify;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.section_link {
+  @include link();
+}
+
+.section_banner {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 200px;
+  align-items: center;
+  border-radius: 5px;
+  @include gradient($rgb-color, $liner-gradient);
+  position: relative;
+}
+
+.section_banner_text_wrap {
+  max-width: 50%;
+}
+
+.section_banner_heading {
+  @extend %selection;
+  font-size: 30px;
+  color: $main-text-color;
+  margin-top: 20px;
+  margin-left: 150px;
+  padding: 0;
+}
+
+.section_banner_text {
+  color: #C0C3CE;
+  padding: 20px 0;
+  text-align: start;
+  margin-left: 150px;
+}
+
+.section_banner_button {
+  @include button($button-back);
+  margin: 0 auto;
+}
+
+.footer {
+  background-color: $footer-back;
+  margin-top: -50px;
+}
+
+.footer-wrap {
+  padding-top: 100px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.footer_logo {
+  color: white;
+  margin: 0 auto;
+}
+
+.footer_text {
+  max-width: 300px;
+  color: white;
+  margin: 0 auto;
+}
+
+.footer-cr {
+  color: white;
+  margin: 0 auto;
+}
+
